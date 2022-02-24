@@ -31,6 +31,20 @@ body {
     text-align: center;
     width: 34px;
   }
+
+  .sep {
+    background: #555;
+    border: 1px solid #999;
+    float: left;
+    font-weight: bold;
+    line-height: 32px;
+    height: 32px;
+    margin-right: 0px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 0.5px;
+  }
   
   .square:focus {
     outline: none;
