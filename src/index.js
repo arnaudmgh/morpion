@@ -35,6 +35,12 @@ class Square extends React.Component {
           }
       }
 
+      handleClick(i) {
+        const squares = this.state.squares.slice();
+        squares[i] = 'X';
+        this.setState({squares: squares});
+    }
+
     renderSquare(i) {
       return <Square
                valeur={this.state.squares[i]}
@@ -44,6 +50,8 @@ class Square extends React.Component {
     // renderSep() {
     //     return <div className="sep"/>;
     // }
+
+
 
     render() {
       const status = 'Next Player: X';
