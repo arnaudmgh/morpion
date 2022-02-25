@@ -20,7 +20,6 @@ class Square extends React.Component {
           {this.state.val}
         </button>
       );
-    }
   }
  
 // class Sep extends React.Component {
