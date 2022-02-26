@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-<<<<<<< Updated upstream
 class Square extends React.Component {
     constructor(props) {
     super(props);
@@ -19,12 +18,6 @@ class Square extends React.Component {
           onClick={ () => { this.setState({val: this.state.valeur}); } }
         >
           {this.state.val}
-=======
-function Square(props) {
-      return (
-        <button className="square" onClick={props.onClick} >
-          {props.valeur}
->>>>>>> Stashed changes
         </button>
       );
   }
