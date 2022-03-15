@@ -11,61 +11,57 @@ function Square(props) {
 }
 
 
-  class Board extends React.Component {
+function Board(props) {
+  const [state, setState] = useState()
 
-
-      handleClick(i) {
-        const squares = this.props.squares.slice();
+    function  handleClick(i) {
+        const squares = props.squares.slice();
         if (calculateWinner(squares) || squares[i]) return;
-        squares[i] = props.xIsNext ? 'X' : 'O';
-        this.setState({squares: squares, xIsNext: !this.props.xIsNext});
+        squares[i] = xIsNext ? 'X' : 'O';
+        setState({squares: squares, xIsNext: !props.xIsNext});
     }
 
-    renderSquare(i) {
+     function renderSquare(i) {
       return <Square
-               valeur={this.props.squares[i]}
-               onClick={() => this.props.onClick(i)} // !! don't forget () => 
+               valeur={props.squares[i]}
+               onClick={() => props.onClick(i)} // !! don't forget () => 
       />;
     }
     // renderSep() {
     //     return <div className="sep"/>;
     // }
-
-
-
-    render() {
-      const winner = calculateWinner(this.state.squares);
+  
+      const winner = calculateWinner(props.squares);
       let status;
       if (winner) {
         status = 'Winner: ' + winner;
       } else {
-        status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
+        status = `Next player: ${props.xIsNext ? 'X' : 'O'}`;
       }
 
       return (
         <div>
           <div className="status">{status}</div>
           <div className="board-row">
-            {this.renderSquare(0)}
-            {this.renderSquare(1)}
-            {this.renderSquare(2)}
+            {renderSquare(0)}
+            {renderSquare(1)}
+            {renderSquare(2)}
             <div className="sep"/>            
           </div>
           <div className="board-row">
-            {this.renderSquare(3)}
-            {this.renderSquare(4)}
-            {this.renderSquare(5)}
+            {renderSquare(3)}
+            {renderSquare(4)}
+            {renderSquare(5)}
             <div className="sep"/>
           </div>
           <div className="board-row">
-            {this.renderSquare(6)}
-            {this.renderSquare(7)}
-            {this.renderSquare(8)}
+            {renderSquare(6)}
+            {renderSquare(7)}
+            {renderSquare(8)}
             <div className="sep"/>
           </div>
         </div>
       );
-    }
   }
   
   class Game extends React.Component {
