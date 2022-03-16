@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
  
 function Square(props) {
   return (
@@ -10,6 +11,15 @@ function Square(props) {
   );
 }
 
+// class Sep extends React.Component {
+//     render() {
+//       return (
+//         <div className="sep">
+//           {/* TODO */}
+//         </div>
+//       );
+//     }
+// }
 
 
   class Board extends React.Component {
