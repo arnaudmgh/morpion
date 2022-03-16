@@ -17,13 +17,14 @@ function Square(props) {
           super(props);
           this.state = {
               squares: Array(9).fill(null),
+              oTurn: false,
           }
       }
 
       handleClick(i) {
         const squares = this.state.squares.slice();
-        squares[i] = 'X';
-        this.setState({squares: squares});
+        squares[i] = this.state.oTurn? 'O' : 'X';
+        this.setState({squares: squares, oTurn: !this.state.oTurn});
     }
 
     renderSquare(i) {
@@ -39,7 +40,7 @@ function Square(props) {
 
 
     render() {
-      const status = 'Next Player: X';
+      const status = 'Next Player: ' + (this.state.oTurn? 'O' : 'X');
       return (
         <div>
           <div className="status">{status}</div>
