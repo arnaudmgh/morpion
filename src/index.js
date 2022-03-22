@@ -23,8 +23,13 @@ function Square(props) {
 
       handleClick(i) {
         const squares = this.state.squares.slice();
-        squares[i] = this.state.oTurn? 'O' : 'X';
-        this.setState({squares: squares, oTurn: !this.state.oTurn});
+        if (squares[i] === null) {
+          squares[i] = this.state.oTurn? 'O' : 'X';
+          console.log(squares[i]);
+          this.setState({squares: squares, oTurn: !this.state.oTurn});
+        } else {
+          console.log('already played ' + squares[i] + ' here')
+        }
     }
 
     renderSquare(i) {
